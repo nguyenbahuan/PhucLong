@@ -13,11 +13,11 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('quan_lis', function (Blueprint $table) {
+        Schema::create('roles', function (Blueprint $table) {
             $table->id();
             $table->text('TaiKhoan');
             $table->text('MatKhau');
-            $table->text('ChucVu');
+            $table->text('Role');
             $table->timestamps();
         });
     }
@@ -29,6 +29,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('quan_lis');
+        Schema::dropIfExists('roles');
     }
 };

@@ -24,6 +24,4 @@ Route::get('/', function () {
 Route::get('/coffe', function () {
     return view('phucLong.coffe');
 });
-Route::get('/product', [SanPhamController::class , 'index']);
-Route::post('/product', [SanPhamController::class , 'index']);
-Route::post('/product', [SanPhamController::class , 'index']);
+Route::get('/product', [SanPhamController::class , 'index'])->middleware('a');

@@ -2,12 +2,12 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\QuanLi;
+use App\Models\role;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\StoreQuanLiRequest;
-use App\Http\Requests\UpdateQuanLiRequest;
+use App\Http\Requests\StoreroleRequest;
+use App\Http\Requests\UpdateroleRequest;
 
-class QuanLiController extends Controller
+class RoleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -32,10 +32,10 @@ class QuanLiController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \App\Http\Requests\StoreQuanLiRequest  $request
+     * @param  \App\Http\Requests\StoreroleRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreQuanLiRequest $request)
+    public function store(StoreroleRequest $request)
     {
         //
     }
@@ -43,10 +43,10 @@ class QuanLiController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\QuanLi  $quanLi
+     * @param  \App\Models\role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show(QuanLi $quanLi)
+    public function show(role $role)
     {
         //
     }
@@ -54,10 +54,10 @@ class QuanLiController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\QuanLi  $quanLi
+     * @param  \App\Models\role  $role
      * @return \Illuminate\Http\Response
      */
-    public function edit(QuanLi $quanLi)
+    public function edit(role $role)
     {
         //
     }
@@ -65,11 +65,11 @@ class QuanLiController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \App\Http\Requests\UpdateQuanLiRequest  $request
-     * @param  \App\Models\QuanLi  $quanLi
+     * @param  \App\Http\Requests\UpdateroleRequest  $request
+     * @param  \App\Models\role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateQuanLiRequest $request, QuanLi $quanLi)
+    public function update(UpdateroleRequest $request, role $role)
     {
         //
     }
@@ -77,10 +77,10 @@ class QuanLiController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\QuanLi  $quanLi
+     * @param  \App\Models\role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy(QuanLi $quanLi)
+    public function destroy(role $role)
     {
         //
     }

@@ -50,7 +50,8 @@
     </div>
     <h1>{{ $a }}</h1>
     <!-- end title -->
-    <div id="root" class="container"> </div>
+    {{ $data }}
+    <div id="root" class="container"> 
     <div class="container-products">
         @foreach ($data as $item)
             <div class='item-drink col-md-3 col-sm-6'>
@@ -73,7 +74,7 @@
             </div>
         @endforeach
     </div>
-
+</div>
     <!-- begin modal content -->
     <div class="modal" id="myModal">
         <div class="modal-dialog-centered">

@@ -3,10 +3,10 @@
 namespace App\Policies;
 
 use Illuminate\Auth\Access\HandlesAuthorization;
-use App\Models\QuanLi;
+use App\Models\role;
 use App\Models\User;
 
-class QuanLiPolicy
+class RolePolicy
 {
     use HandlesAuthorization;
 
@@ -25,10 +25,10 @@ class QuanLiPolicy
      * Determine whether the user can view the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\QuanLi  $quanLi
+     * @param  \App\Models\role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function view(User $user, QuanLi $quanLi)
+    public function view(User $user, role $role)
     {
         //
     }
@@ -48,10 +48,10 @@ class QuanLiPolicy
      * Determine whether the user can update the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\QuanLi  $quanLi
+     * @param  \App\Models\role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function update(User $user, QuanLi $quanLi)
+    public function update(User $user, role $role)
     {
         //
     }
@@ -60,10 +60,10 @@ class QuanLiPolicy
      * Determine whether the user can delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\QuanLi  $quanLi
+     * @param  \App\Models\role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function delete(User $user, QuanLi $quanLi)
+    public function delete(User $user, role $role)
     {
         //
     }
@@ -72,10 +72,10 @@ class QuanLiPolicy
      * Determine whether the user can restore the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\QuanLi  $quanLi
+     * @param  \App\Models\role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function restore(User $user, QuanLi $quanLi)
+    public function restore(User $user, role $role)
     {
         //
     }
@@ -84,10 +84,10 @@ class QuanLiPolicy
      * Determine whether the user can permanently delete the model.
      *
      * @param  \App\Models\User  $user
-     * @param  \App\Models\QuanLi  $quanLi
+     * @param  \App\Models\role  $role
      * @return \Illuminate\Auth\Access\Response|bool
      */
-    public function forceDelete(User $user, QuanLi $quanLi)
+    public function forceDelete(User $user, role $role)
     {
         //
     }
