@@ -25,3 +25,4 @@ Route::get('/coffe', function () {
     return view('phucLong.coffe');
 });
 Route::get('/product', [SanPhamController::class , 'index']);
+Route::post('/product', [SanPhamController::class , 'index']);
