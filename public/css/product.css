@@ -515,6 +515,7 @@ div #btn_pay {
 }
 .container-products {
     display: flex;
+    flex-wrap: wrap;
     margin-bottom: 100px;
 }
 /* reponsive */
