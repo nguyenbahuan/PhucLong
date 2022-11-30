@@ -26,3 +26,4 @@ Route::get('/coffe', function () {
 });
 Route::get('/product', [SanPhamController::class , 'index']);
 Route::post('/product', [SanPhamController::class , 'index']);
+Route::post('/product', [SanPhamController::class , 'index']);
