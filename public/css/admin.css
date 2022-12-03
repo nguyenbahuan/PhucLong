@@ -1,0 +1,446 @@
+* {
+    margin: 0;
+    border: 0;
+    box-sizing: border-box;
+}
+
+.text-center {
+    text-align: center !important;
+}
+.align-self-center {
+    -ms-flex-item-align: center !important;
+    align-self: center !important;
+}
+.rounded-circle {
+    border-radius: 50% !important;
+}
+.avatar {
+    height: 4.5rem;
+    width: 4.5rem;
+}
+.font-30 {
+    font-size: 30px !important;
+}
+
+body {
+    background: url("../img/login.jpg");
+    object-fit: cover;
+    /* background-position: center; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+}
+
+.box-center {
+    max-width: 70%;
+    margin: 0 auto;
+}
+
+.mb {
+    margin-bottom: 15px;
+}
+
+/* Header */
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #0c713d;
+    color: #fff;
+    border-radius: 5px;
+    /* height: 80px;
+    line-height: 80px; */
+}
+.header i {
+    font-size: 20px;
+    padding: 28px;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.header i:hover {
+    background-color: #fff;
+    color: #0c713d;
+}
+.header h1 {
+    font-size: 40px;
+    padding: 14px;
+    margin: 0 0 0 20px;
+}
+/* End header */
+
+/* Menu */
+.menu {
+    /* height: 200px; */
+    background-color: #000;
+    border-radius: 5px;
+    max-height: 50px;
+    margin-bottom: 20px;
+}
+
+.menu ul {
+    list-style-type: none;
+}
+.menu-list-pc li {
+    padding: 0 20px;
+    display: inline-block;
+}
+.menu-list-pc li.active-style a {
+    font-size: 20px;
+    color: #fff;
+}
+.menu-list-pc li a {
+    display: inline-block;
+    text-decoration: none;
+    color: #ccc;
+    line-height: 50px;
+    transition: 0.5s;
+}
+
+.menu-list-pc li:hover a {
+    color: #fff;
+    font-size: 20px;
+}
+/*end Menu */
+
+/* Trang chủ */
+.card-box {
+    background-color: #fff;
+    padding: 1.5rem;
+    -webkit-box-shadow: 0 0 35px 0 rgb(154 161 171 / 15%);
+    box-shadow: 0 0 35px 0rgba (154, 161, 171, 0.15);
+    margin-bottom: 24px;
+    border-radius: 0.25rem;
+}
+.card-box p {
+    font-size: 0.8rem;
+    color: #6c757d !important;
+}
+
+.avatar {
+    background-color: #64c5b1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.avatar-title p {
+}
+
+.box-content {
+    position: relative;
+    overflow: hidden;
+}
+
+.card-user {
+    position: relative;
+}
+
+.avatar-ad {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+
+/* .user-position {
+    position: absolute;
+    display: flex;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: auto;
+    text-align: center;
+    align-items: center;
+    width: 44px;
+    -webkit-box-align: center;
+    border-left: 1px solid #f3f3f3;
+
+} */
+.user-position {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: auto;
+    border-left: 1px solid #f3f3f3;
+    width: 44px;
+    font-size: 16px;
+    text-align: center;
+    display: -moz-flex;
+    display: -ms-flexbox;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-align-items: center;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-justify-content: center;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+}
+.user-position span {
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+    font-family: Arial, Helvetica, sans-serif !important;
+}
+
+@media (min-width: 576px) {
+    .container-fluid {
+        overflow-y: auto;
+        max-height: 500px;
+    }
+}
+@media (max-width: 576px) {
+    .container-fluid {
+        overflow-y: auto;
+        max-height: 600px;
+    }
+}
+
+.nav-btn {
+    font-size: 30px;
+    color: #fff;
+    padding: 20px 20px;
+    line-height: 50px;
+    display: none;
+    margin: 0;
+    border-radius: 5px;
+    transition: 0.3s;
+}
+.nav-btn:hover {
+    background-color: #ccc;
+    color: #000;
+}
+.btn-nav {
+    display: none;
+}
+
+.nav-overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.3);
+    z-index: 1;
+    display: none;
+    animation: fadeIn linear 0.3s;
+}
+.nav-mobile {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    width: 320px;
+    max-width: 100%;
+    background-color: #fff;
+    z-index: 2;
+    transform: translateX(-100%);
+    transition: transform linear 0.3s;
+    animation: fadeIn linear 0.3s;
+}
+.menu-mobile-list {
+    margin-top: 50px;
+    padding: 0;
+}
+
+.nav-mobile li {
+    color: #ccc;
+    display: block;
+    font-size: 1.5rem;
+}
+.nav-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 12px 18px;
+    font-size: 18px;
+    transition: 0.3s;
+}
+.menu-mobile-list li {
+    font-weight: 500;
+    padding: 10px;
+}
+.menu-mobile-list li a {
+    color: #0c713d;
+}
+
+.menu-mobile-list li:hover a,
+.menu-mobile-list li:hover {
+    background-color: #0c713d;
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.nav-input {
+    display: none;
+}
+
+.nav-input:checked ~ .nav-overlay {
+    display: block;
+}
+.nav-input:checked ~ .nav-mobile {
+    transform: translateX(0);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+/* End Trang chủ */
+.menu-item {
+    background-color: #0c713d;
+    height: 600px;
+    border-radius: 5px;
+    padding: 25px;
+    height: auto;
+}
+.menu-item p {
+    margin: 0;
+    color: #fff;
+    font-weight: 500;
+}
+
+.menu-item input[type="text"] {
+    width: 100%;
+    border-radius: 5px;
+    outline: none;
+    padding: 4px 16px;
+}
+.menu-item input[type="submit"],
+.menu-item input[type="reset"],
+.menu-item input[type="button"] {
+    border-radius: 5px;
+    padding: 5px 10px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    transition: 0.2s;
+}
+.menu-item input[type="submit"]:hover,
+.menu-item input[type="reset"]:hover,
+.menu-item input[type="button"]:hover {
+    background-color: #ccc;
+}
+
+.products-list {
+    background-color: #fff;
+}
+
+.products-list input[type="button"] {
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    padding: 2px 5px;
+    font-size: 1vw;
+    margin-right: 4px;
+}
+
+.table {
+    overflow: scroll;
+}
+.table th {
+    position: sticky;
+    top: 0;
+    background-color: #ddd;
+}
+
+.table-wrapper {
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+/* Binh luan */
+.card-comment {
+    display: flex;
+}
+.card-body {
+    background-color: #fff;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    flex: 1;
+}
+.header-tile {
+    font-size: 14px;
+    margin-bottom: 7px;
+    text-transform: uppercase;
+    font-weight: 600;
+}
+.card-body .sub-header {
+    font-size: 13px;
+    color: #8c9396;
+    font-weight: 400;
+
+    word-wrap: break-word;
+    -webkit-box-direction: normal;
+    -webkit-line-clamp: 3;
+    overflow: hidden;
+    -webkit-box-orient: vertical;
+    text-overflow: ellipsis;
+    word-break: break-word;
+}
+.card-body .card-top {
+    display: flex;
+}
+.card-body .avatar-user {
+    width: 3.5rem;
+    height: auto;
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+.card-right i {
+    font-size: 10px;
+}
+.card-comment-wapper {
+    max-height: 550px;
+    overflow-y: scroll;
+}
+
+/* Tablet */
+@media (min-width: 740px) and (max-width: 1024px) {
+    .menu {
+        max-height: 70px;
+    }
+    .nav-pc {
+        display: none;
+    }
+    .nav-btn {
+        display: block;
+    }
+    .btn-nav {
+        display: block;
+    }
+
+    .card-comment-wapper {
+        max-height: 600px;
+        overflow-y: auto;
+    }
+}
+
+/* Mobile */
+@media (max-width: 739px) {
+    .menu {
+        max-height: 70px;
+    }
+    .nav-pc {
+        display: none;
+    }
+    .nav-btn {
+        display: block;
+    }
+    .btn-nav {
+        display: block;
+    }
+
+    .card-comment-wapper {
+        max-height: 600px;
+        overflow-y: auto;
+    }
+}

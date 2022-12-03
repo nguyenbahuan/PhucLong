@@ -36,9 +36,12 @@ Route::get('/create', function () {
 });
 // phần nào liên quan đến admin thì viết vào đây
 Route::middleware(['role'])->group(function () {
-    Route::get('/admin', function () {
-        return view('phucLong.coffe');
-    });
+    Route::get('/admin', [SanPhamController::class,'indexAdmin']);
+    Route::get('/admin/create-product', [SanPhamController::class,'create']);
+    Route::post('/admin/create-product', [SanPhamController::class,'store']);
+    Route::get('/admin/edit-product/{id}', [SanPhamController::class,'edit']);
+    Route::put('/admin/edit-product/{id}', [SanPhamController::class,'update']);
+    Route::post('/admin/delete-product/{id}', [SanPhamController::class,'destroy']);
  
     
 });

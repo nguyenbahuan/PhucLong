@@ -23,7 +23,11 @@ class SanPhamController extends Controller
         $_GET['category'] != null ? $category = $_GET['category'] : $category = "drink" ;
 // 
         $data_product = SanPham::all()->where("LoaiSanPham" , "=" , $category );
-        return view( 'phuclong.product' , ['data' => $data_product , "a" => $category] );
+        return view( 'phuclong.product' , ['data' => $data_product] );
+    }
+    public function indexAdmin(){
+        $data_product = SanPham::all();
+        return view('admin.admin', compact('data_product'));
     }
 
     /**
@@ -34,6 +38,7 @@ class SanPhamController extends Controller
     public function create()
     {
         //
+        return view('admin.create_product');
     }
 
     /**
@@ -42,9 +47,25 @@ class SanPhamController extends Controller
      * @param  \App\Http\Requests\StoreSanPhamRequest  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(StoreSanPhamRequest $request)
+    public function store(Request $request)
     {
         //
+        // $request->validate([
+        //     'TenSanPham' => 'required|string|max:255',
+        //     'LoaiSanPham' => 'required|string|max:255',
+        //     'TenTiengAnh' => 'required',
+        //     'GiaTien' => 'required',
+        //     'imgSanPham' => 'required',
+        // ]);
+        SanPham::insert([
+            'TenSanPham' => $request->sanpham,
+            'LoaiSanPham' => $request->loai,
+            'TenTiengAnh' => $request->kl,
+            'GiaTien' => $request->gia,
+            'imgSanPham' => $request->anh,
+        ]);
+
+        return redirect('admin');
     }
 
     /**
@@ -64,9 +85,13 @@ class SanPhamController extends Controller
      * @param  \App\Models\SanPham  $sanPham
      * @return \Illuminate\Http\Response
      */
-    public function edit(SanPham $sanPham)
+    public function edit($id)
     {
         //
+        
+        $data_product = SanPham::find($id);
+        return view('admin.edit_product', compact('data_product'));
+
     }
 
     /**
@@ -76,9 +101,20 @@ class SanPhamController extends Controller
      * @param  \App\Models\SanPham  $sanPham
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateSanPhamRequest $request, SanPham $sanPham)
+    public function update(Request $request,$id)
     {
         //
+        $data_product = SanPham::find($id);
+        $data_product->update([
+            'TenSanPham' => $request->sanpham,
+            'LoaiSanPham' => $request->loai,
+            'TenTiengAnh' => $request->kl,
+            'GiaTien' => $request->gia,
+            'imgSanPham' => $request->anh,
+        ]);
+
+        return redirect('admin');
+        
     }
 
     /**
@@ -87,8 +123,11 @@ class SanPhamController extends Controller
      * @param  \App\Models\SanPham  $sanPham
      * @return \Illuminate\Http\Response
      */
-    public function destroy(SanPham $sanPham)
+    public function destroy($id)
     {
         //
+        $product = SanPham::find($id);
+        $product->delete();
+        return redirect('admin');
     }
 }
