@@ -6,6 +6,8 @@ use App\Models\role;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreroleRequest;
 use App\Http\Requests\UpdateroleRequest;
+use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class RoleController extends Controller
 {
@@ -24,9 +26,12 @@ class RoleController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
+    public function create(Request $rp)
+    { 
+        if(Auth::attempt(['email' => $rp->email , 'password' => $rp->pass])){
+            return redirect('/admin');
+        }
+        return back();
     }
 
     /**
@@ -37,7 +42,7 @@ class RoleController extends Controller
      */
     public function store(StoreroleRequest $request)
     {
-        //
+        
     }
 
     /**
@@ -46,7 +51,7 @@ class RoleController extends Controller
      * @param  \App\Models\role  $role
      * @return \Illuminate\Http\Response
      */
-    public function show(role $role)
+    public function show()
     {
         //
     }
@@ -57,7 +62,7 @@ class RoleController extends Controller
      * @param  \App\Models\role  $role
      * @return \Illuminate\Http\Response
      */
-    public function edit(role $role)
+    public function edit()
     {
         //
     }
@@ -69,7 +74,7 @@ class RoleController extends Controller
      * @param  \App\Models\role  $role
      * @return \Illuminate\Http\Response
      */
-    public function update(UpdateroleRequest $request, role $role)
+    public function update(UpdateroleRequest $request,)
     {
         //
     }
@@ -80,7 +85,7 @@ class RoleController extends Controller
      * @param  \App\Models\role  $role
      * @return \Illuminate\Http\Response
      */
-    public function destroy(role $role)
+    public function destroy()
     {
         //
     }

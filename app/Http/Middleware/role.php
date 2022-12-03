@@ -4,6 +4,7 @@ namespace App\Http\Middleware;
 
 use Closure;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class role
 {
@@ -14,34 +15,15 @@ class role
      * @param  \Closure(\Illuminate\Http\Request): (\Illuminate\Http\Response|\Illuminate\Http\RedirectResponse)  $next
      * @return \Illuminate\Http\Response|\Illuminate\Http\RedirectResponse
      */
-    public function handle(Request $request, Closure $next, $roles)
+    public function handle(Request $request, Closure $next)
     {
-        // if (! Auth::check()) {
-        //     return redirect()->route('login');
-        // }
-    
-        // if (Auth::user()->role == 1) {
-        //     return redirect()->route('superadmin');
-        // }
-    
-        // if (Auth::user()->role == 5) {
-        //     return redirect()->route('academy');
-        // }
-    
-        // if (Auth::user()->role == 6) {
-        //     return redirect()->route('scout');
-        // }
-    
-        // if (Auth::user()->role == 4) {
-        //     return redirect()->route('team');
-        // }
-    
-        // if (Auth::user()->role == 3) {
-        //     return $next($request); 
-        // }
-    
-        // if (Auth::user()->role == 2) {
-        //     return redirect()->route('admin');
-        // }
+        if (!Auth::check()) // I included this check because you have it, but it really should be part of your 'auth' middleware, most likely added as part of a route group.
+            return redirect('login');
+
+        $user = Auth::user();
+        dd($user->role);
+        if($user->role == 'admin')
+            return $next($request);
+        else return redirect('/');
     }
 }
