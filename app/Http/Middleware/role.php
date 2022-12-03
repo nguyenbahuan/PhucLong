@@ -17,6 +17,7 @@ class role
      */
     public function handle(Request $request, Closure $next)
     {
+        
         if (!Auth::check()) // I included this check because you have it, but it really should be part of your 'auth' middleware, most likely added as part of a route group.
             return redirect('login');
 
