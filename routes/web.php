@@ -28,10 +28,12 @@ Route::get('/coffe', function () {
 Route::get('/product', [SanPhamController::class , 'index']);
 
 Route::get('/login', function () {
-    return view('login');
+    return view('login.login');
 });
 Route::post('/login', [RoleController::class , 'create']);
-
+Route::get('/create', function () {
+    return view('login.createaccount');
+});
 // phần nào liên quan đến admin thì viết vào đây
 Route::middleware(['role'])->group(function () {
     Route::get('/admin', function () {
