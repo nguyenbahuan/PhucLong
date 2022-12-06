@@ -18,10 +18,9 @@ class SanPhamController extends Controller
      */
     public function index(Request $request)
     {
-        // $uri = str_replace($request->url(), '',$request->fullUrl());
-        $category = "";
-        $_GET['category'] != null ? $category = $_GET['category'] : $category = "drink" ;
-// 
+        if($request->has('category')){
+            $category = $request->input('category');
+        }
         $data_product = SanPham::all()->where("LoaiSanPham" , "=" , $category );
         return view( 'phuclong.product' , ['data' => $data_product] );
     }

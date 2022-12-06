@@ -19,12 +19,10 @@ class role
     {
         
         if (!Auth::check()) // I included this check because you have it, but it really should be part of your 'auth' middleware, most likely added as part of a route group.
-            return redirect('login');
-
+        return redirect('login');
         $user = Auth::user();
-        dd($user->role);
         if($user->role == 'admin')
             return $next($request);
         else return redirect('/');
-    }
+        }
 }

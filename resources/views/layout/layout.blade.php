@@ -29,7 +29,12 @@
                 </div>
                 <div class="h_right">
                     <ul>
-                        <li class="login"><a href="./login.html">Đăng nhập</a></li>
+                        @if (Auth::check())
+                            <li class="login"><a href="#">{{ Auth::user()->Ten }}</a></li>
+                            <li class="login"><a href="{{Auth::logout()  }}">Đăng Xuất</a></li>
+                        @else
+                            <li class="login"><a href="/login">Đăng nhập</a></li>
+                        @endif
                         <li class="language"><a href="">VN</a></li>
                         <li class="language-last"><a href="">EN</a></li>
                         <li class="h_cart">

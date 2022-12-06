@@ -22,26 +22,36 @@
             <form action="" method="post" id="form-login">
                 @csrf
                 <h1 class="login">ĐĂNG KÍ</h1>
+                
                 <div class="input-pw">
-                    <input  type="text" name="name" placeholder="Enter Name">
+                    <input  type="text" name="Ten" placeholder="Enter Name">
                 </div>
-                <select id="" name='gt'>
+                @if ($errors->has('Ten'))
+                    <span class="alter alert-danger">{{ $errors->first('Ten') }}</span>         
+                @endif
+                <select id="" name='GioiTinh'>
                     <option value="Nữ">Nữ</option>
                     <option value="Nam">Nam</option>
                 </select>
                 <div class="input-user">
-                    <input  type="text" name="email" placeholder="Enter username" value="">
+                    <input  type="text" name="email" placeholder="Enter Email" value="">
                 </div>
+                @if ($errors->has('email'))
+                <span class="alter alert-danger">{{ $errors->first('email') }}</span>    
+                @endif
                 <div class="input-pw">
-                    <input  type="password" name="pass" placeholder="Enter password">
+                    <input  type="password" name="password" placeholder="Enter password">
                 </div>
+                @if ($errors->has('password'))
+                <span class="alter alert-danger">{{ $errors->first('password') }}</span>            
+                @endif
                 
                 <div class="input-pw">
-                    <input  type="date" name="date" >
+                    <input  type="date" name="NamSinh" >
                 </div>
-                
-
-                <input  type="hidden" name="role" placeholder="role" value="none">
+                @if ($errors->has('NamSinh'))
+                <span class="alter alert-danger">{{ $errors->first('NamSinh') }}</span>  
+                @endif
                 <input id="btn-login" type="submit"  value="Xác nhận ">
 
             </form>

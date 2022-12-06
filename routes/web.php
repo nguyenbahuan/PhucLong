@@ -27,16 +27,22 @@ Route::get('/coffe', function () {
 });
 Route::get('/product', [SanPhamController::class , 'index']);
 
-Route::get('/login', function () {
-    return view('login.login');
-});
-Route::post('/login', [RoleController::class , 'create']);
-Route::get('/create', function () {
-    return view('login.createaccount');
-});
+
+Route::get('/login', [RoleController::class , 'index']);
+Route::post('/login', [RoleController::class , 'login_account']);
+Route::get('/create-login', [RoleController::class , 'index_cr_login']);
+Route::post('/create-login', [RoleController::class , 'create_account']);
+
+
 // phần nào liên quan đến admin thì viết vào đây
 Route::middleware(['role'])->group(function () {
     Route::get('/admin', [SanPhamController::class,'indexAdmin']);
+    
+    
+    
+    Route::get('/admin/lish-role' , [RoleController::class , 'lish_role']);
+
+
     Route::get('/admin/create-product', [SanPhamController::class,'create']);
     Route::post('/admin/create-product', [SanPhamController::class,'store']);
     Route::get('/admin/edit-product/{id}', [SanPhamController::class,'edit']);

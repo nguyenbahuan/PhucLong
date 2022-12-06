@@ -17,6 +17,7 @@
 </head>
 
 <body>
+
     <div class="box-center">
         <div class="mb header">
             <h1>Admin</h1><i id="logout" class="fas fa-sign-out-alt"></i>
@@ -26,13 +27,17 @@
                 <ul class="menu-list-pc">
                     <li class="active-style"><a href="#admin">Trang chủ</a></li>
                     <li><a href="#products">Sản phẩm</a></li>
+                    <li><a href="/admin/lish-role?role=nv">Nhân viên</a></li>
+                    <li><a href="/admin/lish-role?role=none">Khách Hàng</a></li>
                     <li><a href="#user">Khách hàng</a></li>
                     <li><a href="#coment">Bình luận</a></li>
                     <li><a href="#posts">Bài viết</a></li>
                 </ul>
             </nav>
             <label class="btn-nav" for="nav-mobile-input">
-                <i class="fas fa-bars nav-btn"></i>
+                <a href="{{ Auth::logout() }}">
+                    <i class="fas fa-bars nav-btn"></i>
+                    </a>
             </label>
             <input type="checkbox" class="nav-input" name="" id="nav-mobile-input">
             <label for="nav-mobile-input" class="nav-overlay"></label>
@@ -192,7 +197,7 @@
             </div>
             <div id="products" style="margin: 0;" class=" menu-item">
                 <div class="col mb-2">
-                    <a class="btn btn-info" href="admin/creat-product">Thêm</a>
+                    <a class="btn btn-info" href="admin/create-product">Thêm</a>
                 </div>
                 {{-- <div class="col col-md-4">
                     <div class="form-add">

@@ -28,12 +28,18 @@
                 <div class="input-user">
                     <input id="username-login" type="text" name="email" placeholder="Enter username">
                 </div>
+                    {{-- @if ($errors->has('email'))
+                    <span class="alter alert-danger">{{ $errors->first('email') }}</span>            
+                    @endif --}}
                 <div class="input-pw">
-                    <input id="password-login" type="password" name="pass" placeholder="Enter password">
+                    <input id="password-login" type="password" name="password" placeholder="Enter password">
                 </div>
+                {{-- @if ($errors->has('password'))
+                <span class="alter alert-danger">{{ $errors->first('password') }}</span>            
+                @endif --}}
                 <input id="btn-login" type="submit"  value="ĐĂNG NHẬP">
                 <div class="message">
-                    <p href="#">Quên mật khẩu? <a href="#">Đăng kí tài khoản mới </a></p>
+                    <p href="#">Quên mật khẩu? <a href="/create-login">Đăng kí tài khoản mới </a></p>
 
                 </div>
             </form>

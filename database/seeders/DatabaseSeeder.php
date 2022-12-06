@@ -22,9 +22,12 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
         $data = [
-            'name' => 'admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('123456'),
+            'Ten' => 'admin',
+            'role' => 'admin',
+            'GioiTinh' => 'nam',
+            'NamSinh' => '2022-2-2',
             'created_at' => new \DateTime(),
         ];
         DB::table('users')->insert($data);

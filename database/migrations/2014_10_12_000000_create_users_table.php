@@ -21,7 +21,7 @@ return new class extends Migration
             $table->string('password');
             $table->text('Ten');
             $table->text('GioiTinh');
-            $table->timestamp('NamSinh');
+            $table->date('NamSinh');
             $table->rememberToken();
             $table->timestamps();
         });

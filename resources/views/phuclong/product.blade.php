@@ -48,9 +48,9 @@
             </li>
         </ul>
     </div>
-    <h1>{{ $a }}</h1>
+
     <!-- end title -->
-    {{ $data }}
+
     <div id="root" class="container"> 
     <div class="container-products">
         @foreach ($data as $item)
